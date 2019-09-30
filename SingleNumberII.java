@@ -42,3 +42,7 @@ public class SingleNumberII {
         return ones;
     }
 }
+// Because we will use the former ones
+// We compute the twos first
+// The number both appear in ones and twos is the number appear three times
+// delete them from ones and twos
