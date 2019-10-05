@@ -2,7 +2,7 @@
 
 // 本质上是进制转换问题 10进制转26进制
 // 辗转相除的思想
-// when rem != 26 "n -= rem; can be saved, but rem can be 26
+// When rem != 26 "n -= rem; can be saved, but rem can be 26
 // So it only handle when rem = 26
 class Solution {
     public String convertToTitle(int n) {
