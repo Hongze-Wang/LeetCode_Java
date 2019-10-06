@@ -1,4 +1,5 @@
-// 171. Excel Sheet Column Number
+// 171. Excel Sheet Column Number 
+// opposite as question 168
 
 // 99.98% faster 100% less memory
 class Solution {
