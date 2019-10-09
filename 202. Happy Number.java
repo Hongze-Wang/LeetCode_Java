@@ -1,7 +1,8 @@
 // 202. Happy Number
 
 // Using HashSet
-// Using a boolean array to hash the sum already calculated
+// Using a boolean array to hash the sum already calculated will accelerate this method
+// See C++ Solutions
 
 class Solution {
     public boolean isHappy(int n) {
