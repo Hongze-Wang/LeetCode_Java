@@ -61,6 +61,9 @@
 // Using Ascii
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() < 1) {
+            return 0;
+        }
         int len = s.length(); ans=0;
         int[] index = new int[128]; //Ascii has 128 character
         for(int i=0, j=0; j < n; j++) {
