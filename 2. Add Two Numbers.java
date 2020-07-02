@@ -26,7 +26,7 @@ class Solution {
             if(q != null) q = q.next;
         }
         if(carry > 0) { // handle the last carry bit
-        curr.next = new ListNode(carry);
+            curr.next = new ListNode(carry);
         }
         return sumHead.next;
     }
@@ -60,5 +60,59 @@ class Solution {
         ListNode head = new ListNode(res);
         head.next = addTwoNumbers(l1, l2);
         return head;
+    }
+}
+
+// 2. Add Two Numbers
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+// class Solution {
+//     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//         ListNode head = new ListNode(-1);
+//         ListNode cur = head, p=l1, q=l2;
+//         int x, y, sum, carry = 0;
+//         while(p != null || q != null) {
+//             x = (p != null) ? p.val : 0;
+//             y = (q != null) ? q.val : 0;
+//             sum = carry + x + y;
+//             carry = sum / 10;
+//             cur.next = new ListNode(sum % 10);
+//             cur = cur.next;
+//             if(p != null) p = p.next;
+//             if(q != null) q = q.next;
+//         }
+//         if(carry > 0) {
+//             cur.next = new ListNode(carry);
+//         }
+//         return head.next;
+//     }
+// }
+
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(-1), cur=head;
+        ListNode p=l1, q = l2;
+        int sum=0, carry=0;
+        while(p != null || q != null) {
+            sum = carry;
+            if(p != null) sum += p.val;
+            if(q != null) sum += q.val;
+            cur.next = new ListNode(sum%10);
+            carry = sum / 10;
+            cur = cur.next;
+            if(p != null) p = p.next;
+            if(q != null) q = q.next;
+        }
+        if(carry > 0) cur.next = new ListNode(carry);
+        return head.next;
     }
 }
