@@ -20,24 +20,24 @@ public:
 
         queue<TreeNode*> que;
         que.push(root);
-        TreeNode *temp;
+        TreeNode* temp; // the front of the queue
         int n;
         while(que.size()) {
             n = que.size();
             for(int i=1; i<=n; i++) {
                 temp = que.front();
                 que.pop();
-                if(root.left) {
-                    que.push(root.left);
+                if(temp->left) {
+                    que.push(temp->left);
                 }
-                if(root.right) {
-                    que.push(root.right);
+                if(temp->right) {
+                    que.push(temp->right);
                 }
                 if(i == n) {
-                    res.push_back(temp.val);
+                    res.push_back(temp->val);
                 }
             }
         }
         return res;
     }
-}
+};
