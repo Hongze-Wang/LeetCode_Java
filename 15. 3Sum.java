@@ -1,31 +1,32 @@
 // 15. 3Sum
-// three pointers + binary serach
+
+// two pointers / slide window
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(nums); // 二分法应用条件
+        Arrays.sort(nums);
 
         for(int low=0; low < nums.length-2; low++) {
-            int mid = low+1, high = nums.length-1, sum = -nums[low];
+            int i = low+1, high = nums.length-1, sum = -nums[low];
             if(sum < 0) {
                 break;
             }
             if(low != 0 && nums[low] == nums[low-1]) {
                 continue;
             }
-            while(mid < high) {
-                if(nums[mid] + nums[high] == sum) {
-                    res.add(Arrays.asList(nums[low], nums[mid], nums[high]));
-                    while((mid < high) && (nums[mid] == nums[mid+1])) {
-                        mid++;
+            while(i < high) {
+                if(nums[i] + nums[high] == sum) {
+                    res.add(Arrays.asList(nums[low], nums[i], nums[high]));
+                    while((i < high) && (nums[i] == nums[i+1])) {
+                        i++;
                     }
-                    while((mid < high) && (nums[high] == nums[high-1])) {
+                    while((i < high) && (nums[high] == nums[high-1])) {
                         high--;
                     }
-                    mid++;
+                    i++;
                     high--;
-                } else if(nums[mid] + nums[high] < sum) {
-                    mid++;
+                } else if(nums[i] + nums[high] < sum) {
+                    i++;
                 } else {
                     high--;
                 }
@@ -33,3 +34,4 @@ class Solution {
         }
         return res;
     }
+}
