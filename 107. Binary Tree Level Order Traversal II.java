@@ -41,7 +41,7 @@ import java.util.List;
 // }
 
 public class Solution {
-    ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+    ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         BFS(pRoot, 1, res);
         return res;
