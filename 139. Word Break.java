@@ -19,6 +19,28 @@ class Solution {
     }
 }
 
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        int strlen = s.length();
+        int dlen = wordDict.size();
+        boolean[] dp = new boolean[strlen+1];
+        dp[0] = true;
+        for(int i=0; i<dp.length; i++) {
+            if(!dp[i]) continue;
+            for(int j=0; j<dlen; j++) {
+                String word = wordDict.get(j);
+                int wlen = word.length();
+                if(i+wlen <= strlen && s.substring(i, i+wlen).equals(word)) {
+                    dp[i+wlen] = true;
+                }
+            }
+        }
+        return dp[strlen];
+    }
+}
+
+
+
 // class Solution {
 //     public boolean wordBreak(String s, List<String> wordDict) {
 //         // if(s == null || wordDict == null) return false;
