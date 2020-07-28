@@ -11,8 +11,8 @@ class Solution {
             for (int j = 0; j < wordDict.size(); j++) {
                 String word = wordDict.get(j);
                 if (i + word.length() <= s.length() && word.equals(s.substring(i, i + word.length()))) {
-					          dp[i + word.length()] = true;
-				        }
+		    dp[i + word.length()] = true;
+		}
             }
         }
         return dp[s.length()];
