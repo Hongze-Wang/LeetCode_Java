@@ -32,6 +32,7 @@ class Solution {
         }
         return res;
     }
+    
     public int findKthNumber(int n, int k) {
         if(k == 0) return 0;
         int curr = 1;
@@ -48,3 +49,4 @@ class Solution {
         }
         return curr;
     }
+}
