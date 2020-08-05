@@ -55,7 +55,7 @@ class Solution {
         
         int p = map.get(postorder[rootIndex]);
         
-        root.right = buildTree(inorder, postorder, p+1, right, rootIndex-1);         //先左子树或者右子树没有影响
+        root.right = buildTree(inorder, postorder, p+1, right, rootIndex-1);         // 先左子树或者右子树没有影响
         root.left = buildTree(inorder, postorder, left, p-1, rootIndex-1-(right-p)); // right-p has been used
         
         return root;
