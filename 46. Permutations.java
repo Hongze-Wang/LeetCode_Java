@@ -1,4 +1,5 @@
 // 46. Permutations
+// c++ offer next_permutation to generate next permutation, refer to 47.Permutations II
 
 class Solution {
     List<Integer> temp;
