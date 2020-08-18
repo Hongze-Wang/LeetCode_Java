@@ -1,6 +1,5 @@
 // 206. Reverse Linked List
 
-// 100% faster 100% less memory
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -11,7 +10,7 @@
  */
 
 // Iteration way
-// Classic head insert method two line
+// 100% faster 100% less memory
 
 class Solution {
     public ListNode reverseList(ListNode head) {
