@@ -1,5 +1,6 @@
 // 84. Largest Rectangle in Histogram
 // 递增栈解法 参见python解法
+// 建议复习 85. Maximal Rectangle 和 221. Maximal Square
 
 // find the minimum element and compute the area
 // update area if it's larger
