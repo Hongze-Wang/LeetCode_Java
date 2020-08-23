@@ -23,6 +23,7 @@ class Solution {
         for(int i=1; i<n; i++) {
             dp[i][i+1] = i;
         }
+        // 从dp(n-2, n) k可取n-1开始 倒推
         for(int i=n-2; i>0; i--) { // dp[n-1][n] = n-1 已初始化 最少考虑i j差2
             for(int j=i+2; j<n+1; j++) {
                 for(int k=i+1; k<j; k++) {
