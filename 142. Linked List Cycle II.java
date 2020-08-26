@@ -13,25 +13,17 @@
  * }
  */
 
-// s denote the distance from the head to the node meet on the circle
-// t denote the distance from the head to the entry node
-// v denote the distance from the entry node to the meet node onr the circle
-// s = t + v
-// p denote the distance from the meet node on the circle to the entry node of the circle
-// n denote the circle length
-// n = v + p
-// when slow and fast meet on the circle
-// slow run length s
-// fast run lengtn s + n
-// becase 2 * slow.speed == fast.speed
-// 2 * s = s + n
-// so s == n
-// t + v = v + p
-// t == p
-// so the distance from the head to the entry node == distance from the meet node on the circle to the entry node of the circle
-// reset the slow to the head
-// fast and slow run at the speed
-// when they meet, they meet at the entry of the circle 
+// s denote the step slow go when fast and slow meet on the circle
+// a denote the step from head to the entry node of the circle
+// b denote the step from the entry node to the meed node on the circle
+// c denote the step from the meet node on the circle to the entry node
+// s = a + b
+// circle length len = b + c
+// because of the speed
+// 2s = s + nlen
+// s = len
+// a + b = b + c
+// a = c
 
 public class Solution {
     public ListNode detectCycle(ListNode head) {
