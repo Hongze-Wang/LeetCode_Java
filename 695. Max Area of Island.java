@@ -1,7 +1,6 @@
 // 695. Max Area of Island
 
 class Solution {
-    private int maxArea=0;
     
     private boolean isSafe(int[][] grid, int i, int j) {
         return (i >= 0 && i < grid.length && j >= 0 && j < grid[0].length && grid[i][j] == 1);
@@ -15,7 +14,7 @@ class Solution {
     }
     
     public int maxAreaOfIsland(int[][] grid) {
-        int area = 0;
+        int area = 0, maxArea = 0;
         for(int i=0; i<grid.length; i++) {
             for(int j=0; j<grid[0].length; j++) {
                 if(grid[i][j] == 1) {
