@@ -13,17 +13,16 @@
  * }
  */
 
-// s denote the step slow go when fast and slow meet on the circle
 // a denote the step from head to the entry node of the circle
 // b denote the step from the entry node to the meed node on the circle
 // c denote the step from the meet node on the circle to the entry node
-// s = a + b
-// circle length len = b + c
+//
+// circle length l
 // because of the speed
-// 2s = s + nlen
-// s = len
-// a + b = b + c
-// a = c
+// 2(a+b) = a+b + nl
+// a = nl - b = (n-1)l + l - b
+// from the meeting point, fast walk b more steps to finish the circle
+// l = a+b
 
 public class Solution {
     public ListNode detectCycle(ListNode head) {
