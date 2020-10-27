@@ -41,7 +41,7 @@ class Solution {
 class Solution {
     public int search(int[] nums, int target) {
         if(nums == null || nums.length == 0) return -1;
-        ifnums[0] == target) return 0;
+        if(nums[0] == target) return 0;
         
         int low=0, high=nums.length-1, mid;
         while(low <= high) {
