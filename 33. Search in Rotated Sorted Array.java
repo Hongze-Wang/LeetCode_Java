@@ -64,3 +64,16 @@ class Solution {
         return -1;
     }
 }
+
+/*
+The above solution can not pass 程序员面试金典第六版(leetcode-cn)：面试题 10.03. Search Rotate Array LCCI for the following case:
+
+[1,1,1,1,1,2,1,1,1]
+2
+
+output: -1
+expected: 5
+
+details refer to 面试题 10.03. Search Rotate Array LCCI.
+*/
+*/
