@@ -52,12 +52,12 @@ class Solution {
     
     public TreeNode buildTree(int[] inorder, int[] postorder, int left, int right, int rootIndex) {
         if(left > right) return null;
-        TreeNode root = new TreeNode(postorder[rootIndex]);
         
+        TreeNode root = new TreeNode(postorder[rootIndex]);
         int p = map.get(postorder[rootIndex]);
         
-        root.right = buildTree(inorder, postorder, p+1, right, rootIndex-1);         // 先左子树或者右子树没有影响
         root.left = buildTree(inorder, postorder, left, p-1, rootIndex-1-(right-p)); // right-p has been used
+        root.right = buildTree(inorder, postorder, p+1, right, rootIndex-1);         // 先左子树或者右子树没有影响
         
         return root;
     }
