@@ -16,10 +16,11 @@ class Solution {
         if(left > right) return null;
  
         TreeNode root = new TreeNode(preorder[rootIndex]);
-        int p = map.get(val);
+        int p = map.get(preorder[rootIndex]));
         
         root.left = buildTree(inorder, preorder, left, p-1, rootIndex+1);
         root.right = buildTree(inorder, preorder, p+1, right, rootIndex+1+(p-left)); // p-left has been used
+        
         return root;
     }
 }
