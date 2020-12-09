@@ -42,6 +42,7 @@
 
 class Solution {
     HashMap<Integer, Integer> map = new HashMap();
+    
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         for(int i=0; i<inorder.length; i++) {
              map.put(inorder[i], i);
