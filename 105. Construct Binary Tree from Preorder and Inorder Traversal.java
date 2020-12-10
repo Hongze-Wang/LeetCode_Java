@@ -14,11 +14,13 @@ class Solution {
 
     public TreeNode buildTree(int[] inoider, int[] preorder, int left, int right, int rootIndex) {
         if(left > right) return null;
-        int val = preorder[rootIndex];
-        TreeNode root = new TreeNode(val);
-        int p = map.get(val);
+ 
+        TreeNode root = new TreeNode(preorder[rootIndex]);
+        int p = map.get(preorder[rootIndex]));
+        
         root.left = buildTree(inorder, preorder, left, p-1, rootIndex+1);
         root.right = buildTree(inorder, preorder, p+1, right, rootIndex+1+(p-left)); // p-left has been used
+        
         return root;
     }
 }
