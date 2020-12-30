@@ -103,4 +103,3 @@ expected: 5
 
 details refer to 面试题 10.03. Search Rotate Array LCCI.
 */
-*/
