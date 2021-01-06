@@ -1,7 +1,5 @@
-package LeetCode;
 // 113. Path Sum II
-import java.util.ArrayList;
-import java.util.List;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -11,7 +9,8 @@ import java.util.List;
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class PathSumII {
+
+public class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new ArrayList<>();
         dfs(root, sum, res, new ArrayList());
@@ -19,23 +18,22 @@ public class PathSumII {
     }
 
     public void dfs(TreeNode root, int sum, List<List<Integer>> res, List<Integer> list) {
-        if(root == null) {
-            return;
-        }
-        list.add(root.val);
+        if(root == null) return;
+        
         sum -= root.val;
-
+        list.add(root.val);
+        
         if(root.left == null && root.right == null) {
             if(sum == 0) {
                 res.add(new ArrayList(list));
             }
-            list.remove(list.size() - 1);
+            list.remove(list.size()-1);
+            // sum += root.val; 不再向下递归 这一句有没有都一样
             return;
         }
         dfs(root.left, sum, res, list);
         dfs(root.right, sum, res, list);
-        list.remove(list.size() - 1);
-
-        return;
+        list.remove(list.size()-1);
+        // sum += root.val; 不再向下递归 这一句有没有都一样
     }
 }
