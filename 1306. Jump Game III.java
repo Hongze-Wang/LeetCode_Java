@@ -38,7 +38,7 @@ class Solution {
             if(node + arr[node] < n) {
                 q.offer(node + arr[node]);
             }
-            if(node - arr[node] >=0) {
+            if(node - arr[node] >= 0) {
                 q.offer(node - arr[node]);
             }
             arr[node] = -arr[node];
