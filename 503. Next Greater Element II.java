@@ -56,7 +56,7 @@ class Solution {
         Stack<Integer> stack = new Stack<>();
         
         for(int i=2*nums.length-1; i>=0; i--) {
-            while(!stack.isEmpty() && nums[stack.peek()] <= nums[i%nums.length]) { // 递增栈模板代码 维护一个递增栈
+            while(!stack.isEmpty() && nums[stack.peek()] <= nums[i % nums.length]) { // 递增栈模板代码 维护一个递增栈
                 stack.pop();                                                       // 递增栈模板代码 维护一个递增栈
             }
             res[i % nums.length] = stack.isEmpty() ? -1 : nums[stack.peek()];
