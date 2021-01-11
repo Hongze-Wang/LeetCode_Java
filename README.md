@@ -7,4 +7,4 @@ This is a repository storing the code solutions of LeetCode problem, you can jus
 There may be more than one solutions, some is easy to understand but cost lots of time and memory, some are the best solutions.
 Feel free to check which one is the best!
 
-A fews solutions written in C++ are also stored in this repository, and there is a special repository called LeetCode_Python stroing the solution written in python
+A fews solutions written in C++ are also stored in this repository, and there is a special repository called LeetCode_Python stroing the solution written in python.
