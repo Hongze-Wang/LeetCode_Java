@@ -83,6 +83,7 @@
 
 
 class Solution {
+    
     public int total = 0;
 
     public int totalNQueens(int[] queens, int len) {
@@ -94,14 +95,14 @@ class Solution {
                 } else {
                     int[] rem = new int[queens.length-len];
                     for(int j=len; j<queens.length; j++) {
-                        rem[j-len] = queens[j];
-                        queens[j] |= 1 << i;
-                        queens[j] |= 1 << (i+j - len + 1);
-                        queens[j] |= 1 << (i-j + len - 1);
+                        rem[j-len] = queens[j];            // 储存操作前状态 为了回溯
+                        queens[j] |= 1 << i;               // 操作a
+                        queens[j] |= 1 << (i+j - len + 1); // 操作b 对角线规律 行列坐标和相等 -len+1 防止溢出n
+                        queens[j] |= 1 << (i-j + len - 1); // 操作c 对角线规律 行列坐标差相等 +len-1 防止小于0
                     }
                     total += totalNQueens(queens, len+1);
                     for(int j=len; j<queens.length; j++) {
-                        queens[j] = rem[j-len];
+                        queens[j] = rem[j-len];            // 回溯操作 同时撤销了操作a、b、c
                     }
                 }
             }
