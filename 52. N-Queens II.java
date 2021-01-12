@@ -97,7 +97,7 @@ class Solution {
                         rem[j-len] = queens[j];
                         queens[j] |= 1 << i;
                         queens[j] |= 1 << (i+j - len + 1);
-                        queens[j] |= (1 << i) >> (j-len + 1);
+                        queens[j] |= 1 << (i-j + len - 1);
                     }
                     total += totalNQueens(queens, len+1);
                     for(int j=len; j<queens.length; j++) {
